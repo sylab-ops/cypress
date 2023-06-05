@@ -1,2 +1,2 @@
 # cypress
-Go automation with Cypress Framework
+Simple google search with cypress
