@@ -17,6 +17,6 @@ module.exports = defineConfig({
     "html":false,
     "json":true,
     "reportDir":"cypress/reports"
-  }  
-  
+  }
+ 
 });
