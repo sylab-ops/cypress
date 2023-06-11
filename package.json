@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pretest": "echo I am inside pretest",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "posttest": "echo I am inside pretest",
+    "pretest": "rimraf -r cypress/reports/*.json",
+    "test": "npm run cypress-test || npm run posttest",
+    "cypress-test": "cypress run",
+    "posttest": "npm run merge-reports && npm run generate-htmlreport",
     "sayHello": "echo Hello World....",
     "merge-reports": "mochawesome-merge ./cypress/reports/*.json > ./report1.json",
     "generate-htmlreport": "marge report1.json --reportDir  ./cypress/reports"
@@ -23,6 +24,7 @@
     "simple-git-hooks": "^2.8.1"
   },
   "dependencies": {
+    "rimraf": "^5.0.1",
     "update": "^0.7.4"
   }
 }
